@@ -1,0 +1,19 @@
+{
+   "background": "background.html",
+   "browser_action": {
+      "default_icon": "icon/128.png",
+      "default_popup": "popup.html"
+   },
+   "content_scripts": [{"matches": ["*://*/*"], "js": ["js/contentScript.js"]}],
+   "description": "一键计算工作时长 design for ctriper",
+   "icons": {
+      "16": "icon/16.png",
+      "48": "icon/48.png",
+      "128": "icon/128.png"
+   },
+   "manifest_version": 2,
+   "name": "工时计算器",
+   "permissions": ["contextMenus", "tabs", "http://*/*", "http://*/*/*"],
+   "update_url": "https://clients2.google.com/service/update2/crx",
+   "version": "1.0"
+}

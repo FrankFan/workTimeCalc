@@ -1,0 +1,22 @@
+body, ul, li {
+    margin: 0;
+    padding: 0;
+}
+
+ul, li{
+    list-style: none;
+}
+
+ul {
+background-color: honeydew;
+}
+li {
+padding: 5px;
+border: 1px solid #ECCCEC;
+border-radius: 5px;
+margin: 10px;
+background-color: white;
+color: black;
+font-family: inherit;
+}
+
