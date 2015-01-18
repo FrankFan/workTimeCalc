@@ -14,19 +14,16 @@ $(function () {
         console.log('click calc btn');
 
         chrome.tabs.getSelected(null, function(tab){
-            // 想tab发送请求
+            // 向tab发送请求
             chrome.tabs.sendRequest(tab.id, {action: 'getDays'}, function(response){
 
                 if(response !== 'undefined' && response.days){
 
                     workdays = response.days;
-                    console.log(response.days);
                     for (var key in workdays) {
-                        var element= '<li>' + workdays[key] + '</li>';
+                        var element= '<li> '+ (key + 1) +'日: ' + workdays[key] + '</li>';
                         $("#result-ul").append(element);
                     }
-
-
                 }
             });
         });

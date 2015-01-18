@@ -6,9 +6,6 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse){
                 "from the extension");
 
     if(request.action === 'getDays'){
-
-        console.log('chrome.extension.onRequest.addListener callback');
-
         var days = calcWorkTime();
         sendResponse({
             days: days
@@ -18,11 +15,10 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse){
 
 
 function calcWorkTime () {
-    //验证
+
     var obj = {};
 
-    debugger;
-    // 获取所有的日期框
+    // 获取DOM所有的日期div
     var days = document.querySelectorAll("#ctl00_cphMain_CalendarAC tbody tr td table.listAC");
     for(var i = 0, len = days.length; i < len; i++){
         var day = days[i];
@@ -33,13 +29,11 @@ function calcWorkTime () {
             // 计算一天工作了多长时间 时间格式： "09:42~18:44"
             var startdate = textOrHour.split('~')[0];
             var enddate = textOrHour.split('~')[1];
-            //
+            // 一天工作小时数
             var result = datediff(startdate, enddate);
             obj[i] = result;
         };
     }
-
-    console.dir(obj);
 
     return obj;
 }
@@ -60,10 +54,24 @@ function datediff(startdate, enddate) {
     if (workMin < 0) {
         workMin = 60 + workMin;
         workHour = workHour - 1;
-        retValue = workHour + 'h' + workMin + 'm';
+        retValue = setFront(workHour) + 'h' + setFront(workMin) + 'm';
     }else{
-        retValue = workHour + 'h' + workMin + 'm';
+        retValue = setFront(workHour) + 'h' + setFront(workMin) + 'm';
     }
 
     return retValue;
+}
+
+/**
+ * @description: 给时间<10的设置前导数字0
+ *
+ */
+function setFront(num){
+    // 验证
+    if(typeof(num) !== 'number')
+        return;
+    if(num < 10){
+        num = '0' + num;
+    }
+    return num;
 }
