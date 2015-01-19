@@ -11,7 +11,7 @@ $(function () {
 
     $('#calc').click(function(){
 
-        console.log('click calc btn');
+        $("#result-ul").empty();
 
         chrome.tabs.getSelected(null, function(tab){
             // 向tab发送请求
@@ -21,7 +21,7 @@ $(function () {
 
                     workdays = response.days;
                     for (var key in workdays) {
-                        var element= '<li> '+ (key + 1) +'日: ' + workdays[key] + '</li>';
+                        var element= '<li> '+ (parseInt(key) + 1) +'日: ' + workdays[key] + '</li>';
                         $("#result-ul").append(element);
                     }
                 }

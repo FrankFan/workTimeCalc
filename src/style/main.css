@@ -1,6 +1,7 @@
 body, ul, li {
     margin: 0;
     padding: 0;
+    background-color: honeydew;
 }
 
 ul, li{
@@ -8,7 +9,7 @@ ul, li{
 }
 
 ul {
-	background-color: honeydew;
+
 }
 
 li {
@@ -21,3 +22,7 @@ li {
 	font-family: inherit;
 }
 
+#copyright{
+    text-align: right;
+    color: blue;
+}
