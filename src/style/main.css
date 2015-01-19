@@ -19,10 +19,21 @@ li {
     word-wrap: break-word;
 }
 
+#btnCalc{
+    margin-left: 20px;
+}
+
 #copyright{
     text-align: right;
     color: blue;
 }
+
+.tips{
+    padding: 5px;
+    color: blue;
+    word-wrap: break-word;
+}
+
 
 a:link{
     color: blue;

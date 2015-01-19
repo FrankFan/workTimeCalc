@@ -4,14 +4,19 @@
     <meta charset="UTF-8">
     <title>工时计算器</title>
     <link rel="stylesheet" href="style/main.css">
+    <link rel="stylesheet" href="style/button.css">
 </head>
 <body>
-    <input type="button" id="calc" value="计算" >
+    <div class="tips">
+        <p>1. 一定要在chrome中使用该插件(废话...) <br />
+            2. 一定要保持OA系统登录状态, <a target="_blank" href="http://oa.cn1.global.ctrip.com/">点击这里 check 是否登录.<a> <br/>
+            3. 一定要打开 <a target="_blank" href="http://oa.cn1.global.ctrip.com/HR/AttendenceCalendar.aspx">http://oa.cn1.global.ctrip.com/HR/AttendenceCalendar.aspx</a> 点击查询按钮再使用</p>
+    </div>
+    <input class="button green bigrounded" type="button" id="btnCalc" value="计算工时" >
     <div style="width: 300px;">
         <ul id="result-ul"></ul>
-        <div id="copyright">工时计算器 design for CTRIPer <br/> Author: <a href="http://www.fy98.com" target="_blank">fy98.com</a></div>
+        <div id="copyright">工时计算器 design for CTRIPer <br/> <a href="http://www.fy98.com" target="_blank">fy98.com 制作</a></div>
     </div>
-
 
     <script src="js/jquery.min.js"></script>
     <script src="js/main.js"></script>

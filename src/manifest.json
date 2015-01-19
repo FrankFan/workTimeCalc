@@ -6,7 +6,7 @@
    },
    "content_scripts": [{"matches": ["*://*/*"], "js": ["js/contentScript.js"]}],
    "author":"http://www.fy98.com",
-   "description": "一键计算工作时长 design for ctriper",
+   "description": "一键计算工作时长 design for CTRIPer",
    "icons": {
       "16": "icon/16.png",
       "48": "icon/48.png",
