@@ -7,9 +7,17 @@ chrome.extension.onRequest.addListener(function(request, sender, sendResponse){
 
     if(request.action === 'getDays'){
         var days = calcWorkTime();
-        sendResponse({
-            days: days
-        });
+
+        if(days.message){
+            sendResponse({
+                message: days.message
+            });
+        }else{
+            sendResponse({
+                days: days
+            });
+        }
+
     }
 });
 
@@ -20,19 +28,25 @@ function calcWorkTime () {
 
     // 获取DOM所有的日期div
     var days = document.querySelectorAll("#ctl00_cphMain_CalendarAC tbody tr td table.listAC");
-    for(var i = 0, len = days.length; i < len; i++){
-        var day = days[i];
 
-        // 获取每个日期格子里的打卡 开始时间~结束时间 | 无刷卡记录
-        var textOrHour = day.querySelectorAll('.list_body')[1].querySelector('td').innerText;
-        if (textOrHour !== '无刷卡记录') {
-            // 计算一天工作了多长时间 时间格式： "09:42~18:44"
-            var startdate = textOrHour.split('~')[0];
-            var enddate = textOrHour.split('~')[1];
-            // 一天工作小时数
-            var result = datediff(startdate, enddate);
-            obj[i] = result;
-        };
+    if(typeof (days) !== "undefined" && days.length > 0){
+
+        for(var i = 0, len = days.length; i < len; i++){
+            var day = days[i];
+
+            // 获取每个日期格子里的打卡 开始时间~结束时间 | 无刷卡记录
+            var textOrHour = day.querySelectorAll('.list_body')[1].querySelector('td').innerText;
+            if (textOrHour !== '无刷卡记录') {
+                // 计算一天工作了多长时间 时间格式： "09:42~18:44"
+                var startdate = textOrHour.split('~')[0];
+                var enddate = textOrHour.split('~')[1];
+                // 一天工作小时数
+                var result = datediff(startdate, enddate);
+                obj[i] = result;
+            };
+        }
+    }else{
+        obj.message = 'empty';
     }
 
     return obj;

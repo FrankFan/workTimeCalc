@@ -8,10 +8,6 @@ ul, li{
     list-style: none;
 }
 
-ul {
-
-}
-
 li {
 	padding: 5px;
 	border: 1px solid #ECCCEC;
@@ -20,9 +16,30 @@ li {
 	background-color: white;
 	color: black;
 	font-family: inherit;
+    word-wrap: break-word;
 }
 
 #copyright{
     text-align: right;
     color: blue;
+}
+
+a:link{
+    color: blue;
+    text-decoration: none;
+}
+
+a:visited{
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover{
+    color: blue;
+    text-decoration: none;
+}
+
+a:active{
+    color: blue;
+    text-decoration: none;
 }
