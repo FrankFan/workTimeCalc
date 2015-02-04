@@ -6,6 +6,7 @@
 这个chrome插件就是用来计算每天的工作时长，只需在chrome浏览器中轻轻一点，就可以看到自己每天的工作时长了哦~
 很爽有木有~
 
+![](http://images.cnitblog.com/blog/282019/201502/041929303909436)
 
 > just for CTRIPer ...
 
