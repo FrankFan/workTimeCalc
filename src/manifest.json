@@ -6,6 +6,7 @@
    },
    "content_scripts": [{"matches": ["*://*/*"], "js": ["js/contentScript.js"]}],
    "author":"http://www.fy98.com",
+   "homepage_url": "https://github.com/FrankFan/workTimeCalc",
    "description": "一键计算工作时长 design for CTRIPer",
    "icons": {
       "16": "icon/16.png",
@@ -16,5 +17,5 @@
    "name": "工时计算器",
    "permissions": ["contextMenus", "tabs", "http://*/*", "http://*/*/*"],
    "update_url": "https://clients2.google.com/service/update2/crx",
-   "version": "1.0"
+   "version": "1.0.1"
 }
